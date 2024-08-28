@@ -107,6 +107,7 @@ struct SecondFixed{F}
     inner::F
 end
 
+@inline Base.getindex(p::ParIndexed, i) = p.inner[i]
 @inline Base.getindex(n::ParSource, i) = ParIndexed(n, i)
 @inline Base.getindex(n::VarSource, i) = Var(i)
 
